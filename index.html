@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>打字游戏</title>
+<script src="js/game.js"></script>
+	<script>
+        window.onload=function(){
+        	var start=document.getElementsByClassName('start')[0];
+        	var img=document.getElementsByClassName('img')[0];
+        	var life=document.getElementsByClassName('life')[0];
+        	var score=document.getElementsByClassName('score')[0];
+        	var step=document.getElementsByClassName('step')[0];
+        	start.onclick=function(){
+        		start.style.display="none";
+        		img.style.display="none";
+        		score.style.display="block";
+        		life.style.display="block";
+        		step.style.display="block";
+        		var div=document.createElement("div")
+       	                div.style.cssText="background-image:url(ba.png);background-repeat:no-repeat;background-size:400px 250px;position:absolute;margin:auto auto;left:0;top:0;right:0;bottom:0";
+       	                document.body.appendChild(div);
+        		new game();
+        	}
+        	
+        }
+	</script>
+</head>
+<style>
+	html,body{
+		margin: 0;padding:0;
+		width:100%;height:100%;
+		overflow:hidden;
+		background: url(images/bgc.png) no-repeat;
+		background-size: 100% 100%;
+	}
+	.img{
+		position: absolute;
+		left:250px;
+	}
+	.start{
+		width:272px;height:288px;
+		position: fixed;
+		margin:auto auto;
+		left:0;top:280px;
+		right:0;bottom:0;
+		border-radius: 10px;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	.start img{
+		width:272px;height:288px;
+		margin-top:0px;
+	}
+	.score{
+		width:200px;height:80px;
+		position: absolute;
+		right:550px;bottom:20px;
+		display:none;
+	}
+	.score img{
+		width:200px;height:80px;
+	}
+	.score span{
+		display:block;
+		position: absolute;
+		left:120px;top:8px;
+		font-size: 50px;
+		color:#6a6049;
+	}
+	.life{
+		width:200px;height:80px;
+		position: absolute;
+		right:50px;bottom:20px;
+		display:none;
+	}
+	.life img{
+		width:200px;height:80px;
+	}
+	.life span{
+		display:block;
+		position: absolute;
+		left:120px;top:8px;
+		font-size: 50px;
+		color:#6a6049;
+	}
+	.step{
+		width:200px;height:80px;
+		position: absolute;
+		left:55px;bottom:20px;
+		display:none;
+	}
+	.step img{
+		width:200px;height:80px;
+	}
+	.step span{
+		display:block;
+		position: absolute;
+		left:120px;top:8px;
+		font-size: 50px;
+		color:#6a6049;
+	}
+	.next{
+		width:600px;height:400px;
+		position: fixed;
+		background:rgba(0,0,0,0);
+		border-radius:10px;
+		margin:auto auto;
+		left:0;top:0;right:0;
+		bottom:0;
+		display:none;
+	}
+	.next img{
+		width:600px;height:400px;
+		margin-left:10px;
+	}
+	.over{
+		width:600px;height:400px;
+		position: fixed;
+		background:rgba(172,172,172,0);
+		border-radius:10px;
+		margin:auto auto;
+		left:0;top:0;
+		right:0;bottom:0;
+		display:none;
+		z-index: 999
+	}
+	.over img{
+		width:600px;height:400px;
+		margin-left:10px;
+	}
+</style>
+<body>
+		<!-- <img src="images/b1.png" alt="" class="img1"> -->
+	<!-- 关卡：<input type="text"> -->
+	<div class="img">
+		<img src="images/aa.png" alt="">
+	</div>
+	<div class="start">
+		<img src="images/start.png" alt="">
+	</div>
+
+		<div class="score">
+			<img src="images/fenshu.png" alt="">
+			<span>0</span>
+		</div>
+		<div class="life">
+			<img src="images/life.png" alt="">
+			<span>10</span>
+		</div>
+
+	<div class="step">
+		<img src="images/step.png" alt="">
+		<span>1</span>
+	</div>
+	<div class="next">
+		<img src="images/ba.png" alt="">
+	</div>
+	<div class="over">
+		<img src="images/baa.png" alt="">
+	</div>
+
+    
+</body>
+</html>
